@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.qzl.materialdesign.MainActivity">
+
+    <!--
+        Toolbar : 的使用，用来替换actionBar
+            theme : 主题
+
+    -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/colorPrimary"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        />
+
+    <!--
+        DrawerLayout : 的使用 侧滑菜单，抽屉的效果
+
+    -->
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <!--
+          导航条：配置自定义属性：
+        app:tabBackground: 背景颜色
+        app:tabTextColor : 没有被选中的颜色
+        tabSelectedTextColor : 选中的颜色，和下面的滑条一样
+        tabSelectedTextColor ： 选中的颜色
+        tabIndicatorColor : 指示器的颜色
+
+        tabTextAppearance : 字体样式
+
+        tabMode : tab模式
+    -->
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabBackground="@color/colorPrimaryDark"
+                app:tabTextColor="@android:color/white"
+                app:tabSelectedTextColor="@color/colorAccent"
+                app:tabIndicatorColor="@android:color/white"
+                app:tabTextAppearance="@android:style/TextAppearance.Large"
+                app:tabMode="scrollable"/>
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/pager"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <Button
+                android:id="@+id/btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="点我"
+                />
+        </LinearLayout>
+
+        <!--NavigationView : 侧边栏
+            itemTextColor : 条目文字颜色
+            itemIconTint : 为图标着色
+            headerLayout : 增加头布局
+        -->
+        <android.support.design.widget.NavigationView
+            android:id="@+id/navigation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity = "start"
+            app:headerLayout="@layout/header"
+            app:itemTextColor="@color/navigation_selecter"
+            app:itemIconTint="@color/navigation_selecter"
+            app:menu="@menu/navigation"/>
+    </android.support.v4.widget.DrawerLayout>
+</LinearLayout>

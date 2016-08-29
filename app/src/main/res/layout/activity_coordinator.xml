@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    CoordinatorLayout : 功能非常强大的帧布局
+    snackBar：只能和CoordinatorLayout 连用才能实现滑动删除
+-->
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.qzl.materialdesign.CoordinatorActivity">
+
+    <Button
+        android:id="@+id/coordinator_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="点我"/>
+</android.support.design.widget.CoordinatorLayout>
